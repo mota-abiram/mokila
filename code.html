@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Reliance Elysium Landing Page - Hero</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Poppins:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#66aa4b", // Close to Royal Green #67AC4B
+            "background-light": "#f7f7f6",
+            "background-dark": "#061A3F", // Navy Blue for dark mode background
+            "navy-blue": "#061A3F",
+            "royal-green": "#67AC4B",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "poppins": ["Poppins", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-input:focus {
+      border-color: #67AC4B;
+      box-shadow: 0 0 0 1px #67AC4B;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark">
+  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display"
+    style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex min-h-screen w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-4"
+      data-alt="Modern facade of a luxury Reliance Elysium property with lush greenery."
+      style='background-image: linear-gradient(180deg, rgba(6, 26, 63, 0) 0%, rgba(6, 26, 63, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqzjYCIKR12vLyS8BQOZK8cJzANDPXokr3B-_5UyhIRbbwPjDREhz8KdMeNaUqzmBQ7fIEd4PC82MQbaKtZ8AHhQ3NNLw9UJvwOzL7B7UIJSJlSnG7QEbrWkVJ3llbi6lP6PQRfaLawX2HK5DIlii8GBoLzy1JqqU2fUimmox54kxwNcZNdjN6OaTUCMZAXfpaR_XQEc7rBiQ2jWdMfC7eXQrsxijm42uMIqdEgRCvZfCazlKY5nvwgRPmG2L4IHxjLNn4zYh2gQyd");'>
+      <div class="flex w-full max-w-md flex-col items-center gap-6 pb-10 text-center">
+        <div class="flex flex-col gap-2">
+          <h1 class="font-poppins text-4xl font-bold leading-tight text-white">Compare Your Location With Reliance
+            Elysium – Mokila</h1>
+          <p class="font-display text-base font-normal leading-normal text-white">Select your preferred location and
+            instantly get a detailed comparison PDF between your location and our project at Mokila.</p>
+        </div>
+        <div class="flex w-full flex-col gap-4">
+          <div class="relative w-full">
+            <select id="location-select"
+              class="form-select h-14 w-full appearance-none rounded-lg border-0 bg-white px-4 pr-10 text-base font-normal text-navy-blue placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-royal-green/50">
+              <option disabled="" selected="">Select Location</option>
+              <option>Neopolis</option>
+              <option>Kokapet</option>
+              <option>Financial District</option>
+              <option>Gandipet</option>
+              <option>Kollur</option>
+              <option>Shankarpally</option>
+              <option>Tellapur</option>
+              <option>Narsingi</option>
+              <option>Osman Nagar / Kardanur Belt</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-navy-blue">
+
+            </div>
+          </div>
+          <button id="compare-btn" onclick="openModal()" disabled
+            class="flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-royal-green text-base font-bold leading-normal text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50">
+            <span class="truncate">Compare Now</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="compare-modal" class="hidden fixed inset-0 z-50 flex items-end justify-center bg-[#141414]/40"
+    onclick="if(event.target === this) closeModal()">
+    <div class="w-full max-w-lg bg-white dark:bg-zinc-900 rounded-t-2xl shadow-2xl flex flex-col items-stretch">
+      <div class="relative flex h-12 w-full items-center justify-center pt-2">
+        <div class="h-1.5 w-10 rounded-full bg-gray-200 dark:bg-zinc-700"></div>
+        <button onclick="closeModal()"
+          class="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-gray-500 dark:text-gray-400 hover:text-navy-blue dark:hover:text-white">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col px-6 pb-6 pt-2">
+        <h3 class="font-poppins text-navy-blue dark:text-white text-2xl font-semibold leading-tight text-left pb-4">Get
+          Your Location Comparison Report</h3>
+        <form id="comparison-form" class="space-y-4">
+          <div class="flex flex-col">
+            <label class="text-navy-blue dark:text-gray-300 text-base font-medium leading-normal pb-2"
+              for="full-name">Full Name</label>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-navy-blue dark:text-white focus:outline-0 focus:ring-0 border border-gray-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 h-14 placeholder:text-gray-400 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+              id="full-name" placeholder="Enter your full name" type="text" value="" required />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-navy-blue dark:text-gray-300 text-base font-medium leading-normal pb-2" for="email">Email
+              Address</label>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-navy-blue dark:text-white focus:outline-0 focus:ring-0 border border-gray-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 h-14 placeholder:text-gray-400 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+              id="email" placeholder="Enter your email address" type="email" value="" required />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-navy-blue dark:text-gray-300 text-base font-medium leading-normal pb-2" for="phone">Phone
+              Number</label>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-navy-blue dark:text-white focus:outline-0 focus:ring-0 border border-gray-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 h-14 placeholder:text-gray-400 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+              id="phone" placeholder="Enter your phone number" type="tel" value="" required />
+            <p class="text-xs text-gray-500 dark:text-zinc-400 pt-1.5 px-1">Enter a 10-digit number</p>
+          </div>
+          <div class="flex flex-col">
+            <label class="text-navy-blue dark:text-gray-300 text-base font-medium leading-normal pb-2"
+              for="location">Selected Location</label>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-500 dark:text-zinc-400 focus:outline-0 focus:ring-0 border border-gray-300 dark:border-zinc-600 bg-gray-100 dark:bg-zinc-800 h-14 p-[15px] text-base font-normal leading-normal cursor-not-allowed"
+              id="location" readonly="" type="text" value="Elysium Prime, Sector 72" />
+          </div>
+          <div class="pt-4">
+            <button
+              class="flex h-14 w-full items-center justify-center rounded-lg bg-royal-green px-6 py-2.5 text-base font-bold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200"
+              type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const locationSelect = document.getElementById('location-select');
+      const selectedLocation = locationSelect.value;
+      const modalLocationInput = document.getElementById('location');
+
+      if (selectedLocation && selectedLocation !== "Select Location") {
+        modalLocationInput.value = selectedLocation;
+      }
+
+      document.getElementById('compare-modal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('compare-modal').classList.add('hidden');
+    }
+
+    document.getElementById('comparison-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const locationInput = document.getElementById('location');
+      const selectedLocation = locationInput.value;
+
+      const pdfMapping = {
+        'Neopolis': 'pdfs/Mokila_vs_Neopolis.pdf',
+        'Kokapet': 'pdfs/Mokila_vs_Kokapet.pdf',
+        'Financial District': 'pdfs/Mokila-vs-Financial-District.pdf',
+        'Gandipet': 'pdfs/Mokila_vs_Gandipet.pdf',
+        'Kollur': 'pdfs/Mokila_vs_Kollur.pdf',
+        'Shankarpally': 'pdfs/Mokila_vs_Shankarpally.pdf',
+        'Tellapur': 'pdfs/Mokila_vs_Tellapur.pdf',
+        'Narsingi': 'pdfs/Mokila_vs_Narsingi.pdf',
+        'Osman Nagar / Kardanur Belt': 'pdfs/Mokila_vs_Osman_Nagar_Kardanur_Belt.pdf'
+      };
+
+      const fileName = pdfMapping[selectedLocation] || 'Default_Comparison.pdf';
+
+      // Trigger download
+      const link = document.createElement('a');
+      link.href = fileName;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      closeModal();
+      alert('Your comparison report for ' + selectedLocation + ' is downloading!');
+    });
+
+    // Enable/Disable Compare Button based on selection
+    document.getElementById('location-select').addEventListener('change', function () {
+      const compareBtn = document.getElementById('compare-btn');
+      if (this.value && this.value !== "Select Location") {
+        compareBtn.disabled = false;
+      } else {
+        compareBtn.disabled = true;
+      }
+    });
+  </script>
+</body>
+
+</html>
