@@ -53,10 +53,16 @@
     body {
       min-height: max(884px, 100dvh);
     }
+
+    @media (min-width: 768px) {
+      body {
+        min-height: 1300px;
+      }
+    }
   </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark sm:overflow-hidden lg:overflow-hidden md:overflow-hidden ">
+<body class="bg-background-light dark:bg-background-dark sm:overflow-hidden lg:overflow-hidden md:overflow-auto ">
   <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display"
     style='font-family: Inter, "Noto Sans", sans-serif;'>
     <div
