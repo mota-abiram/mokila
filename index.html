@@ -112,7 +112,7 @@
       </div>
 
       <!-- Right Side Content -->
-      <form
+      <form id="compare-form"
         class="mt-8 lg:-mt-5 md:-mt-40 flex w-full max-w-md flex-col items-start gap-6 p-6 md:p-8 lg:p-8 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl text-center md:text-left relative z-10 mx-auto lg:mx-0">
         <div class="flex flex-col gap-2">
           <h1
@@ -242,21 +242,21 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-8 lg:gap-10 mb-20 md:mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5 md:gap-8 lg:gap-10 mb-20 md:mb-24">
           <div
-            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-royal-green to-green-600 hover:scale-105 transition-all duration-300 shadow-xl">
+            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-royal-green to-green-600 hover:scale-105 transition-all duration-300 shadow-xl w-full max-w-sm md:max-w-none">
             <div class="font-poppins text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">42+
             </div>
             <div class="font-display text-base md:text-lg text-white/90 tracking-wide">Completed Projects</div>
           </div>
           <div
-            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-navy-blue to-[#0a2a5c] hover:scale-105 transition-all duration-300 shadow-xl">
+            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-navy-blue to-[#0a2a5c] hover:scale-105 transition-all duration-300 shadow-xl w-full max-w-sm md:max-w-none">
             <div class="font-poppins text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">2,000+
             </div>
             <div class="font-display text-base md:text-lg text-white/90 tracking-wide">Happy Families</div>
           </div>
           <div
-            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-royal-green to-green-600 hover:scale-105 transition-all duration-300 shadow-xl">
+            class="text-center p-7 md:p-10 rounded-2xl bg-gradient-to-br from-royal-green to-green-600 hover:scale-105 transition-all duration-300 shadow-xl w-full max-w-sm md:max-w-none">
             <div class="font-poppins text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">37+
             </div>
             <div class="font-display text-base md:text-lg text-white/90 tracking-wide">Years of Legacy</div>
@@ -453,12 +453,12 @@
           </div>
 
           <div class="relative z-10 text-center">
-            <span class="material-symbols-outlined text-white/80 text-5xl md:text-6xl mb-6">auto_awesome</span>
             <p
-              class="font-poppins text-lg md:text-xl lg:text-2xl font-medium text-white/90 leading-relaxed max-w-4xl mx-auto tracking-wide mb-8">
+              class="font-poppins text-lg md:text-2xl lg:text-3xl font-medium text-white/90 leading-relaxed max-w-4xl mx-auto tracking-wide mb-8">
               A legacy of craftsmanship, trust, and future-ready development.
             </p>
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            <a href="#compare-form"
+              onclick="document.getElementById('compare-form').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;"
               class="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-gray-100 text-royal-green font-poppins font-semibold text-base md:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <span>Compare Now</span>
               <span class="material-symbols-outlined">arrow_forward</span>
